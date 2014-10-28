@@ -1,0 +1,47 @@
+<Create new repository>
+$ git init
+$ git add README.md (can be skipped)
+$ Create any other necessary files in the directory and do a 'git add'
+$ git commit -m "First Commit"
+$ git remote add origin git@github.com:<username>/<project_name>.git
+
+<How to check out code from github>
+1) Create a directory for the source code
+2) cd to the directory and run: > git init
+3) Run: > git remote add origin git@git.corp.yahoo.com:<username>/<project_name>.git (Get this address from the git hub project page)
+4) Run: > git pull origin master
+5) Check if the code got downloaded
+
+<Removing file from GIT>
+$ git rm file.txt
+$ git commit -m "Removing file file.txt"
+
+<Troubleshooting>
+1) If you get error "Permission denied (public key).", while trying to connect go GIT (i.e.: while running > ssh -T git@github.com)
+- Check if you created the ssh keys and added them to github
+- Run the command (> ssh-add -l) and see if the private keys were added to ssh (if it doesn't list your keys, then add them using ssh-add <path_to_private_key>) - 
+- Run the above command again (> ssh-add -l) to check the above keys are now listed
+- Try connecting again using "ssh -T" and it should work. If not, google about it and add the findings to this list :)
+
+$ ssh-add -l
+2048 d9:00:b1:fd:ff:19:1a:4d:c8:0f:f0:ef:bf:94:ee:fa /Users/paramesh/.ssh/id_rsa (RSA)
+
+$ ssh-add ~/.ssh/ygit_rsa
+Enter passphrase for /Users/paramesh/.ssh/ygit_rsa: 
+Identity added: /Users/paramesh/.ssh/ygit_rsa (/Users/paramesh/.ssh/ygit_rsa)
+
+$ ssh-add ~/.ssh/ygit_dsa
+Enter passphrase for /Users/paramesh/.ssh/ygit_dsa: 
+Identity added: /Users/paramesh/.ssh/ygit_dsa (/Users/paramesh/.ssh/ygit_dsa)
+
+Some info about this issue: https://help.github.com/articles/error-permission-denied-publickey
+
+
+2) If you get error "could-not-open-a-connection-to-your-authentication-agent", its some problem with the ssh agent.
+- Run > eval `ssh-agent`
+- Check if ssh lists your key by typing > ssh-add -l
+- If not, add them using > ssh-add <path_to_private_key>
+- Run the above command again (> ssh-add -l) to check the above keys are now listed
+- Try connecting again using "ssh -T" and it should work. If it doesn't, google about it and add the findings to this list :)
+
+More details about this issue: http://funkaoshi.com/blog/could-not-open-a-connection-to-your-authentication-agent

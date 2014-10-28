@@ -1,0 +1,71 @@
+<unix>
+$ grep -r "pattern" * (recursive search for pattern)
+$ grep -r -i "pattern" * (ignore case)
+$ grep -r -n "pattern" * (print line numbers with results)
+$ grep -v -r "pattern" * (reverse selection)
+$ grep -r "pattern" *|grep -v Binary (discard the results from Binary files)
+$ grep -A 10 -B 5 -r "field2_new" output.txt (show 10 lines before the match and 5 lines after the match)
+$ grep "<title>.*jpg" commonswiki-20121129-pages-articles-multistream.xml (use .* to match any # of characters, not *)
+
+$ find . -iname "abc"
+$ find . -name "FILE-TO-FIND" -exec rm -rf {} \; (Find and delete files with one command)
+
+$ sed -n '20,40p' file_name (to list lines b/w 20 and 40)
+$ sed 's/.*<display_name>\(.*\)<\/display_name>.*/\1/'  (to extract text within html tags)
+$ sed -i 's/abc/xyz/g' input.tsv (search & replace)
+Remember:
+sed -n 's/../../' will substitute
+see -n 's/../../p' will search
+
+$ comm -12 file1 file2 (show lines common in file1 & file2, suppress lines only in file1 & file2)
+$ comm -23 file1 file3 (show lines unique to file1, suppress lines only in file2 and those common to both file1 & file2)
+
+$ awk 'FNR>=20 && FNR<=40' file (to list lines b/w 20 and 40)
+$ awk -F'\t' < input.txt 'BEGIN {OFS="\t\t\t\t\t"} {print $2, $1}' (join first 2 columns with 5 tabs)
+$ awk -F'\t' < funds2.txt '{print $2 "\t\t\t\t\t" $1 "\t" $3}' (Awk concatenation is just putting the expressions beside one another - no operator necessary)
+$ awk -F'\t' < input.txt '{if($6==0) print;}'|wc -l
+$ awk -F'\t' < input.txt '{if($6==1) print tolower($3) "\t" $4;}'|sort -n -k1,1|uniq > processedfile.tsv
+More on Awk: 
+One liners - http://www.pement.org/awk/awk1line.txt
+Awk substr function - http://star-www.rl.ac.uk/docs/sc4.htx/node38.html
+
+$ tr ',' '\t' test.csv > test.tsv (Convert csv into a tsv file)
+
+Tokenize text in a story into words and their counts (creating a histogram). All of this can be done using (just) unix!
+$ tr -sc '[A-Z][a-z]' '[\012*]' < inputstory.txt | sort | uniq -c > words.hist
+Below is a great illustration of how some standard unix utilities can be used as powerful tools for text processing/NLP.
+http://www.generation5.org/content/2004/nlpUnix.asp
+
+Remove trailing comma from a subset of lines in the file
+$ head -n 4 companies.txt |sed s/.$//
+
+Check file sizes in human readable form
+$ du -sh <directory>
+
+Common cut, uniq, sort sequence to examine columns of a tsv file:
+$ cut -f2 input.tsv|sort|uniq -c
+$ cut -f2 input.tsv|sort|uniq -c|sort -n (sort the final counts)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+<vim>
+Cheat Sheet: http://bullium.com/support/vim.html
+
+:vsp file1
+:sp file1
+:e file1 (open a new file - push)
+:e# (pop up the last opened file)
+! (execute cmd from file window)
+!! (show the cmd prompt)
+* (highlight occurrences of word under cursor)
+u (undo)
+Ctrl + r (redo)
+n (next search result)
+N (previous search result)
+% (jump to matching paranthesis)
+:hi Search ctermbg=LightBlue  (Set search highlight color to light blue)
+:hi Search (show current setting)
+:set nohlsearch (disable search highlight)
+:set number (enable line numbers)
+:set nonumber
+
+More on highlighting -> http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches

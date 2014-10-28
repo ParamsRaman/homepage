@@ -10,6 +10,12 @@
 
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Params's Blog" href="rss.xml" />
     <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
     <!-- Google Analytics -->
     <script type="text/javascript">
@@ -48,9 +54,11 @@
       .navbar {
         margin-bottom: 5px;
       }
-    </style>
+  </style>
+
   </head>
   <body>
+	  
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -74,6 +82,9 @@
             </li>
             <li {% if page.section == 'blog'%} class="active" {% endif %} >
               <a href="blog.html">Blog</a>
+            </li>
+            <li {% if page.section == 'links'%} class="active" {% endif %} >
+              <a href="links.html">Useful Links</a>
             </li>
           </ul>
         </div>
