@@ -1,0 +1,33 @@
+<Work Summary - Sonification Lab>
+
+Overall:
+- Participated in lab demos, GVU poster sessions, Radio Recording sessions, initial visits to Shepherd Center about IVAT.
+- Contributed as an author in three publications:
+  * ICAD 2010 - Reducing repetitive development tasks in auditory menu displays with the auditory menu library - (Parameswaran Raman, Benjamin K. Davison, Myounghoon Jeon, Bruce N. Walker)
+  * CSUN 2010 - Advanced Auditory Menus for Universal Access to Electronic Devices  - (Myounghoon Jeon, Benjamin K. Davison, Jeff Wilson, Parameswaran Raman, Bruce N. Walker)
+  * AUTO UI 2011 - Poster pdf - ENGIN (Exploring Next Generation IN-vehicle INterfaces): Drawing a New Conceptual Framework through Iterative Participatory Processes - (Myounghoon Jeon, Jonathan Schuett, Jung-Bin Yim, Parameshwaran Raman & Bruce N. Walker)
+
+Auditory Menus Project:
+- Worked on prototype to demonstrate the various AM features, came up with a Java based Desktop application that was used for lab demos.
+- Worked with Ben on Auditory Menu Library and representing AM's using yaml markup. Led to a GVU poster and an ICAD 2010 publication.
+
+IVAT Project:
+- Initially worked with Kedar in understanding Centrafuse platform and fixing the plugin architecture.
+- Worked with Centrafuse team and automated the process of generating, compiling and deploying plugins (using C# Visual Studio).
+- Trained and helped new lab members understand creating Centrafuse plugins.
+- Integrated Affect Detection into Centrafuse. Participated in related lab demos.
+
+ENGIN Project:
+- Brainstormed on initial ideas for the Next Gen Interface, created surveys, gathered information from friends, did polls to find out what people think about new features of an in-vehicle interface.
+- Discussed with rest of the team and categorized these ideas into common groups, held expert sessions I and II with human factor experts, analyzed their feedback and worked on refining the ideas. Prepared more detailed UI flows for some of them.
+- Ran FGI sessions with Philart for gathering more information.
+- Presented the initial ENGIN designs to Panasonic with Bruce/Philart and others.
+- Appeared as poster in Auto UI Conf 2011.
+
+MathAIG Project:
+- Worked with Prof. Susan Embretson and her students in understanding requirements for this project. Put together a web-based application based on Google GWT.
+- Created a more generic design later (to accommodate all her question variants). Came up with a desktop based app with a database design to support more advanced combinations of questions.
+- Worked with Jeff Wilson towards the end to transfer the work.
+
+People I collaborated with:
+- Bruce, Ben, Philart, Jeff Wilson, Susan Embretson, Kedar, Centrafuse team
