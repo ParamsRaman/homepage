@@ -21,7 +21,7 @@ First of all, make sure you read the data correctly. A good practice is to print
 
 If you are generating random numbers, then you should use a <i>deterministic seed</i>. Do not use time as a seed. This is very important because although your algorithm will make use of non-determinism and randomness, it makes   debugging painfully hard as the intermediate results will keep changing everytime you run it. So, assign a deterministic seed. This will also help others reproduce your research results if they need to, at a later point.
 
-When debugging an optimizer for example, look at how the objective function value evolves as the iterations increase. If it behaves in an unexpected manner, the first thing to do would be to check your gradient calculation code (also check the code that calculates your obj function. Often there are terms computed in common which are used to calculate both obj function and the gradient!). One way to debug gradients is to manually write down the obj function equation, its gradient and compare term by term what you are computing. Assign some values to the parameters and check the output. But, the better approach (recommended) is to use <i>Finite Gradient Check</i> (Leon Bottou describes it in section 4.2 of this paper - Page on microsoft.com). From my experience, this eliminates most of the problems.
+When debugging an optimizer for example, look at how the objective function value evolves as the iterations increase. If it behaves in an unexpected manner, the first thing to do would be to check your gradient calculation code (also check the code that calculates your obj function. Often there are terms computed in common which are used to calculate both obj function and the gradient!). One way to debug gradients is to manually write down the obj function equation, its gradient and compare term by term what you are computing. Assign some values to the parameters and check the output. But, the better approach (recommended) is to use <i>Finite Gradient Check</i> (Leon Bottou describes it in section 4.2 of this <a href="http://research.microsoft.com/pubs/192769/tricks-2012.pdf">paper</a>). From my experience, this eliminates most of the problems.
 Note that norm of the gradient will be close to zero at the optimum, so you can use it to check if you are there yet (but this can be a false positive if there is a local minima!)
 
 If your objective function is non-convex, then there is chance you end up in local-minima. So if you do not get the expected obj value at the end, instead of fixed initialization of the weights, try random initialization, or initialize it with the final weights of another model that works correctly! One of these might help you get out of the local-optimum.
@@ -32,7 +32,7 @@ Other issues in the code could be:
 <ul>
 <li>Floating point truncation issues (check if you are dividing by integers and it accidently causes the result to be rounded off to an integer! - when what you want is a float value).</li>
 <li>Underflow/Overflow problems (this happens mostly when your objective function computes exp(x) or log(x)). Notice that log of a very small number can lead to -ve inf (or +ve inf vice-versa). exp() is a very fast growing function and even exp(80) or exp(100) can easily overflow. So you need to take care of that. Often exp() terms are computed over data points in some way, so if you normalize the data so that the features to lie between 0-1, this can be avoided to some extent, but how to avoid this exactly - depends on your function.</li>
-<li>If you calculate the log-sum-exp function for example in logistic regression, you can use the max-trick to avoid overflow (More details here: http://jblevins.org/log/log-sum-exp).</li>
+<li>If you calculate the log-sum-exp function for example in logistic regression, you can use the max-trick to avoid overflow (More details here: <a href="http://jblevins.org/log/log-sum-exp">http://jblevins.org/log/log-sum-exp</a>).</li>
 </ul>
 
 Plot obj function value vs iterations, accuracy vs iterations. That should give an idea of how your optimizer is proceeding.
@@ -44,5 +44,5 @@ By model, I mean the objective function; you want to setup the right function (s
 
 By optimizer, I mean the solver (say gradient-descent, SGD, L-BFGS, etc) that takes the model (or objective function) and produces the final weights (or optimal value). As you can see, regularization does not matter here as it will only change the value of the objective function. What matters here is given any function, how <i>correctly</i> and <i>quickly</i> can we find the optimal solution?
 
-This are some of my suggestions, I hope to add more later. Comments are welcome.
+These are some of my suggestions, I hope to add more later. Comments are welcome.
 
