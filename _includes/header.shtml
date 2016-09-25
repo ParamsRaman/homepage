@@ -78,9 +78,9 @@
             <li {% if page.section == 'publications'%} class="active" {% endif %} >
               <a href="research.html">Research</a>
             </li>
-            <li {% if page.section == 'courses'%} class="active" {% endif %} >
+            <!--li {% if page.section == 'courses'%} class="active" {% endif %} >
               <a href="courses.html">Courses</a>
-            </li>
+            </li-->
             <li {% if page.section == 'blog'%} class="active" {% endif %} >
               <a href="blog.html">Blog</a>
             </li>
