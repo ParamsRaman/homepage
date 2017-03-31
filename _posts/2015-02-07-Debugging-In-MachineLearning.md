@@ -31,7 +31,7 @@ Check your step-size (learning rate) and make sure you do not set it too large. 
 Other issues in the code could be:
 <ul>
 <li>Floating point truncation issues (check if you are dividing by integers and it accidently causes the result to be rounded off to an integer! - when what you want is a float value).</li>
-<li>Underflow/Overflow problems (this happens mostly when your objective function computes exp(x) or log(x)). Notice that log of a very small number can lead to -ve inf (or +ve inf vice-versa). exp() is a very fast growing function and even exp(80) or exp(100) can easily overflow. So you need to take care of that. Often exp() terms are computed over data points in some way, so if you normalize the data so that the features to lie between 0-1, this can be avoided to some extent, but how to avoid this exactly - depends on your function.</li>
+<li>Underflow/Overflow problems (this happens mostly when your objective function computes exp(x) or log(x)). Notice that log of a very small number can lead to -ve inf (or +ve inf vice-versa). exp() is a very fast growing function and even exp(80) or exp(100) can easily overflow. So you need to take care of that. Often exp() terms are computed over data points in some way, so if you normalize the data so that the features lie between 0-1, this can be avoided to some extent, but how to avoid this exactly - depends on your function.</li>
 <li>If you calculate the log-sum-exp function for example in logistic regression, you can use the max-trick to avoid overflow (More details here: <a href="http://jblevins.org/log/log-sum-exp">http://jblevins.org/log/log-sum-exp</a>).</li>
 </ul>
 
@@ -42,7 +42,7 @@ Most of the above points help in debugging the optimizer part of your code, howe
 Distinction between model and an optimizer: 
 By model, I mean the objective function; you want to setup the right function (say logistic regression or svm or etc) with the right regularizers (to avoid overfitting/underfitting) so that you can get the best performance (a.k.a accuracy). Here, you may or may not care about time.
 
-By optimizer, I mean the solver (say gradient-descent, SGD, L-BFGS, etc) that takes the model (or objective function) and produces the final weights (or optimal value). As you can see, regularization does not matter here as it will only change the value of the objective function. What matters here is given any function, how <i>correctly</i> and <i>quickly</i> can we find the optimal solution?
+By optimizer, I mean the solver (say gradient-descent, SGD, L-BFGS, etc) that takes the model (or objective function) and produces the final weights (or optimal value). As you can see, regularization may not matter much here as it will only change the value of the objective function. What matters here is given any function, how <i>correctly</i> and <i>quickly</i> can we find the optimal solution?
 
 These are some of my suggestions, I hope to add more later. Comments are welcome.
 

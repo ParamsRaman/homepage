@@ -47,11 +47,11 @@ title: "Parameswaran Raman: Research"
     <span class="title">
       DS-MLR: Exploiting Double Separability for Scaling up Distributed Multinomial Logistic Regression<br>
     </span>
-    <span class="me">Parameswaran Raman</span>, Shin Matsushima, Xinhua Zhang, Hyokun Yun, S.V.N Vishwanathan <br>
+    <span class="me">Parameswaran Raman</span>, Sriram Srinivasan, Shin Matsushima, Xinhua Zhang, Hyokun Yun, S.V.N Vishwanathan <br>
     <b>pre-print</b>
     <a href="http://arxiv.org/pdf/1604.04706v1.pdf">[arXiv]</a>
     <!--a href="robirank.html">[Code]</a--><br/>
-    <p><small>Summary: Multinomial logistic regression is a popular tool in the arsenal of machine learning algorithms, yet scaling it to datasets with very large number of data points and classes has not been trivial. This is primarily because one needs to compute the log-partition function on every data point. This makes distributing the computation hard. In this paper, we present a distributed stochastic gradient descent based optimization method (DS-MLR) for scaling up multinomial logistic regression problems to very large data. Our algorithm exploits double-separability, an attractive property we observe in the objective functions of several models in machine learning, that allows us to distribute both data and model parameters simultaneously across multiple machines. In addition to being easily parallelizable, our algorithm achieves good test accuracy within a short period of time, with a low overall time and memory footprint as demonstrated by empirical results on both single and multi-machine settings. For instance, on a dataset with 93,805 training instances and 12,294 classes, we achieve close to optimal f-score in 10,000 seconds using 2 machines each having 12 cores.</small></p>
+    <p><small>Summary: Multinomial logistic regression is a popular tool in the arsenal of machine learning algorithms, yet scaling it to datasets with very large number of data points and classes has not been trivial. This is primarily because one needs to compute the log-partition function on every data point. This makes distributing the computation hard. In this paper, we present a distributed stochastic gradient descent based optimization method (DS-MLR) for scaling up multinomial logistic regression problems to very large data. Our algorithm exploits double-separability, an attractive property we observe in the objective functions of several models in machine learning, that allows us to achieve both data as well as model parallelism simultaneously. In addition to being parallelizable, our algorithm can also easily be made asynchronous. In order to demonstrate the effectiveness of our method, we solve a very large multi-class classification problem on the reddit dataset with data and parameter sizes of 200 GB and 300 GB respectively. Such a scale of data calls for simultaneous data and model parallelism which is where DS-MLR fits in. </small></p>
     <!-- 25 out of 215 (11.6%) -->
   </li>
   
@@ -59,20 +59,30 @@ title: "Parameswaran Raman: Research"
     <span class="title">
       Extreme Stochastic Variational Inference: Distributed and Asynchronous <br>
     </span>
-    <span class="me">Parameswaran Raman</span>, Jiong Zhang, Hsiang-Fu Yu, Shihao Ji, S.V.N Vishwanathan <br>
+    Jiong Zhang*, <span class="me">Parameswaran Raman*</span>, Hsiang-Fu Yu, Shihao Ji, S.V.N Vishwanathan (* equally contributed)<br>
     <b>pre-print</b>
-    <a href="https://arxiv.org/pdf/1605.09499v2.pdf">[arXiv]</a>
+    <a href="https://arxiv.org/pdf/1605.09499v3.pdf">[arXiv]</a>
     <!--a href="robirank.html">[Code]</a--><br/>
-    <p><small>Summary: We extreme stochastic variational inference (ESVI), a scalable algorithm to perform inference on bayesian models. 
-  ESVI allows multiple processors to simultaneously and asynchronously
-  perform variational inference updates. Moreover, by using a classic
-  owner computes paradigm, the algorithm can be made lock-free.  ESVI
-  exhibits data and model parallelism, that is, each processor only
-  needs access to a subset of the data and a subset of the
-  parameters. In our experiments we show that our new algorithm
-  outperforms a straightforward strategy for parallelizing variational
-  inference, which requires bulk synchronization after every iteration.</p></small>
-    <!-- 25 out of 215 (11.6%) -->
+    <p><small>Summary: We propose extreme stochastic variational inference (ESVI), an
+  asynchronous and lock-free algorithm to perform variational inference
+  on massive real world datasets. Stochastic variational inference
+  (SVI), the state-of-the-art algorithm for scaling variational
+  inference to large-datasets, is inherently serial. Moreover, it
+  requires the parameters to fit in the memory of a single processor;
+  this is problematic when the number of parameters is in billions. ESVI
+  overcomes these limitations by requiring that each processor only
+  access a subset of the data and a subset of the parameters, thus
+  providing data and model parallelism simultaneously.  We demonstrate
+  the effectiveness of ESVI by running Latent Dirichlet Allocation (LDA)
+  on UMBC-3B, a dataset that has a 3 million words in the vocabulary and
+  3 billion tokens. To best of our knowledge, this is an order of
+  magnitude larger than the largest dataset on which results using
+  variational inference have been reported in literature.  In our
+  experiments, we found that ESVI outperforms VI and SVI, and also
+  achieves a better quality solution.  In addition, we propose a
+  strategy to speed up computation and save memory when fitting large
+  number of topics. </small></p>
+  <!-- 25 out of 215 (11.6%) -->
   </li>
 
 </ul>
@@ -146,12 +156,21 @@ title: "Parameswaran Raman: Research"
     <span class="title">
       Optimization on the surface of the (Hyper)-Sphere <br>
     </span>
-    <span class="me">Parameswaran Raman</span>, Jiasen Yang (Purdue University) <br>
-    Course Project, CS 520: Computational Methods in Optimization <br>
+    <span class="me">Parameswaran Raman</span>, Jiasen Yang <br>
+    Course Project, CS 520: Computational Methods in Optimization (Purdue University) <br>
     <a href="static/pub/cs520report.pdf">[pdf]</a>
   </li>
 
-  <!--li class="paper">
+  <li class="paper">
+    <span class="title">
+      Target Score Prediction in the game of Cricket <br>
+    </span>
+    Sethuraman K, <span class="me">Parameswaran Raman</span>, Vijay Ramakrishnan <br>
+    Course Project, CS 7641: Machine Learning (Georgia Institute of Technology) <br>
+    <a href="static/pub/ML_Project_CS7641_report.pdf">[pdf]</a>
+  </li>
+  
+  <li class="paper">
     <span class="title">
       PiX-C, Pictures: Express & Communicate (Augmenting Communication with Visual Input for Children in the Autism Spectrum) <br>
     </span>
@@ -161,15 +180,5 @@ title: "Parameswaran Raman: Research"
     <a href="static/pub/NLP_TermProject.pdf">[slides]</a>
     <a href="static/pub/PiX-C_Poster.pdf">[poster]</a>
     <a href="http://www.naduism.com/projects/#adaptivekb">[video]</a>
-  </li-->
-
-  <!--li class="paper">
-    <span class="title">
-      A Learning Algorithm for Prediction in the game of Cricket <br>
-    </span>
-    Sethuraman K, <span class="me">Parameswaran Raman</span>, Vijay Ramakrishnan (Georgia Institute of Technology) <br>
-    Course Project, CS 7641: Machine Learning  <br>
-    <a href="static/pub/ML_Project_CS7641.pdf">[pdf]</a>
-    <a href="static/pub/ML_Project_CS7641.pdf">[slides]</a>
-  </li-->
+  </li>
 </ul-->
