@@ -6,6 +6,12 @@
 #open -a "Google Chrome" "http://127.0.0.1:4000/~praman1"
 
 
-#To build and deploy the website to a remote server (modify the server details as per your needs), uncomment the below two lines:
+##To build and deploy the website to a remote server (modify the server details as per your needs), uncomment the below two lines:
+
 jekyll build
+
+# To deploy to https://people.ucsc.edu/~praman1/ (use blue)
 rsync -vaz _site/ praman1@unix.ic.ucsc.edu:public_html
+
+# To deploy to https://users.soe.ucsc.edu/~praman1 (use gold)
+rsync -vaz _site/ praman1@citrisdance.soe.ucsc.edu:/soe/praman1/.html

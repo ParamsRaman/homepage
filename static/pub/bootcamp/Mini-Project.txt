@@ -1,0 +1,31 @@
+Write commands for the following!
+
+(a) Create a new file movies_noheader.csv removing the header information present in movies.csv file
+> sed -n '2,$p' movies.csv > movies_noheader.csv
+
+(b) List the different categories of movies we have
+> cut -f2 -d',' movies_noheader.csv |uniq
+
+(c) How many different categories of movies do we have?
+> cut -f2 -d',' movies_noheader.csv |uniq|wc -l
+
+(d) What's the oldest comedy movie we have in our catalogue?
+> grep "Comedy" movies.csv |sort -t"," -k5n,5 | head -n 1
+
+(e) How many non-US movies do we have in our catalogue?
+> grep -v "US" movies.csv |wc -l
+
+(f) Extract all the movie names and store it into a file in alphabetically sorted order
+> cut -f3 -d',' movies.csv |sort > names.txt
+
+(g) Pick out the latest 5 movies to recommend to your friends
+> sort -t',' -k5n,5 movies.csv |tail -n 5
+
+(h) Update all the movie names to remove the word "The" (eg: "The Godfather" => "Godfather")
+> sed -n 's/The //p' movies.csv
+
+(i) List all movies released in the 1900's. (Hint: Think about using wildcard characters in the grep command)
+> grep ",19??," movies.csv
+
+(j) List all years in the range 1900-1999 in which movies got released (Hint: Think about using wildcard characters in the grep command)
+> grep ",19??," movies.csv |cut -f5 -d','|sort -n|uniq
