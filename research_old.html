@@ -1,0 +1,232 @@
+---
+layout: default
+section: research 
+title: "Parameswaran Raman: Research"
+---
+
+<style>
+  li.paper {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  li.paper .title {
+    font-size: 115%;
+  }
+
+  li.paper .me {
+    background-color: #eeffee;
+  }
+</style>
+
+<!-- Not ready yet
+<pre style="background-color: #eeeeff">
+  <i class="icon-info-sign"></i> Click on the paper title for more information
+</pre>
+-->
+
+<h2> Publications</h2>
+
+<!--h2> Conference Papers </h2-->
+<ul>
+  <li class="paper">
+    <span class="title">
+      Scaling Multinomial Logistic Regression via Hybrid Parallelism
+      <a href="static/pub/mlr-kdd19.pdf" style="color:
+      #FF0000">[Paper]</a>
+      <a href="https://bitbucket.org/params/dsmlr" style="color:#FF0000">[Code]</a>
+      <a href="https://www.youtube.com/watch?v=1YdTSldKVno" style="color:#FF0000">[Promo Video]</a>
+      <a href="static/pub/dsmlr_KDD19_poster.pdf" style="color:#FF0000">[Poster]</a>
+      <a href="static/pub/dsmlr_KDD19_slides_short.pdf" style="color:#FF0000">[Slides]</a><br>
+    </span>
+    <span class="me">Parameswaran Raman</span>, Sriram Srinivasan, Shin Matsushima, Xinhua Zhang, Hyokun Yun, S.V.N. Vishwanathan <br>
+    <b>ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+      (KDD), 2019</b>. <br/><small style="color: #0000FF">Accepted as Oral Presentation (9.16 % acceptance
+      rate).</small><br>
+    <input type="button" id="absbutton2" value="click to read abstract"><br>
+    <p id="abstract2" style="display:none;"><small>We study the problem of
+      scaling Multinomial Logistic Regression (MLR) to datasets with very large
+      number of data points in the presence of large number of classes. At a
+    scale where neither data nor the parameters are able to fit on a single
+    machine, we argue that "simultaneous data and model parallelism (Hybrid
+  Parallelism)" is inevitable. The key challenge in achieving such a form of
+  parallelism in MLR is the log-partition function which needs to be computed
+"across all K classes" per data point, thus making model parallelism
+non-trivial. To overcome this problem, we propose a reformulation of the
+original objective that exploits "double-separability", an attractive property
+that naturally leads to hybrid parallelism. Our algorithm (DS-MLR) is
+"asynchronous and completely de-centralized", requiring minimal communication
+across workers while keeping both data and parameter workloads partitioned.
+Unlike standard data parallel approaches, DS-MLR "avoids bulk-synchronization" by maintaining local normalization terms on each worker and accumulating them incrementally using a token-ring topology. We demonstrate the versatility of DS-MLR under various scenarios in data and model parallelism, through an empirical study consisting of real-world datasets. In particular, to demonstrate scaling via hybrid parallelism, we created a new benchmark dataset (Reddit-Full) by pre-processing 1.7 billion reddit user comments spanning the period 2007-2015. We used DS-MLR to solve an extreme multi-class classification problem of classifying 211 million data points into their corresponding subreddits. Reddit-Full is a massive data set with data occupying 228 GB and 44 billion parameters occupying 358 GB. To the best of our knowledge, no other existing methods can handle MLR in this setting. </small></p>
+    <!-- 25 out of 215 (11.6%) -->
+  </li>
+  <li class="paper">
+    <span class="title">
+      Extreme Stochastic Variational Inference: Distributed and Asynchronous
+    <a href="static/pub/esvi-aistats19.pdf" style="color: #FF0000">[Paper]</a>
+    <a href="static/pub/esvi-poster.pdf" style="color: #FF0000">[Poster]</a>
+    <a href="static/pub/esvi-talk-labmeeting.pdf" style="color: #FF0000">[Slides]</a><br>
+    </span>
+    Jiong Zhang*, <span class="me">Parameswaran Raman*</span>, Shihao Ji, Hsiang-Fu Yu, S.V.N. Vishwanathan, Inderjit S. Dhillon (* equally contributed)<br>
+    <b>International Conference on Artificial Intelligence and Statistics
+      (AISTATS), 2019</b><br>
+    <input type="button" id="absbutton1" value="click to read abstract"><br>
+    <p id="abstract1" style="display:none;"><small>Mixture of exponential family models are among the most fundamental and widely used
+  statistical models. Stochastic variational inference
+  (SVI), the state-of-the-art algorithm for parameter estimation in such models is inherently 
+  serial. Moreover, it requires the parameters to fit in the memory of a single processor;
+  this poses serious limitations on scalability when the number of parameters 
+  is in billions. In this paper, we present extreme stochastic variational inference (ESVI), a
+  distributed, asynchronous and lock-free algorithm to perform variational inference
+  for mixture models on massive real world datasets. ESVI
+  overcomes the limitations of SVI by requiring that each processor only
+  access a subset of the data and a subset of the parameters, thus
+  providing data and model parallelism simultaneously. Our empirical study demonstrates
+  that ESVI not only outperforms VI and SVI in wallclock-time, but also
+  achieves a better quality solution. 
+  To further speed up computation and save memory when fitting large
+  number of topics, we propose a variant ESVI-TOPK which maintains only the top-k important topics.
+  Empirically, we found that using top 25% topics suffices to achieve the same accuracy as storing all the topics.</small></p>
+  <!-- 25 out of 215 (11.6%) -->
+  </li>
+  
+  <li class="paper">
+    <span class="title">
+      Ranking via Robust Binary Classification
+    <a href="http://papers.nips.cc/paper/5363-ranking-via-robust-binary-classification.pdf"
+      style="color: #FF0000">[Paper]</a>
+    <a href="static/pub/RoBiRank_Poster.pdf" style="color: #FF0000">[Poster]</a>
+    <a href="https://bitbucket.org/d_ijk_stra/robirank" style="color:
+    #FF0000">[Code]</a><br>
+    </span>
+    Hyokun Yun, <span class="me">Parameswaran Raman</span>, S.V.N. Vishwanathan <br>
+    <b>Advances in Neural Information Processing Systems (NIPS), 2014 </b><br>
+    <input type="button" id="absbutton3" value="click to read abstract"><br>
+    <p id="abstract3" style="display:none;"><small>We propose RoBiRank - a Learning to Rank algorithm inspired by Robust Binary Classification and show that it scales well on large-data. The main idea behind Robust Binary Classification is to use transformation on convex losses to help give up performance on hard to classify data points (outliers). <u>Firstly</u>, we observe that this is related to learning to rank, where we would not mind sacrificing accuracy at the bottom of the ranking list in order to gain performance at top of the list. We thus show that our ranking objective function can be viewed as a generalization of robust binary classification. <u>Secondly</u>, minimizing RoBiRank is equivalent to directly maximizing DCG (a popular evaluation metric for listwise learning to rank). As a result, RoBiRank performs really well at the top of the list. <u>Thirdly</u>, using a linearization trick on our loss allows us to obtain an unbiased stochastic gradient estimator so that our SGD optimizer becomes independent of the size of the dataset. In addition, our algorithm is parallelizable and can also be used to solve large-scale problems without any explicit features. Experimental results are shown on both medium and very large datasets.</small></p>
+    <!-- 25 out of 215 (11.6%) -->
+  </li>
+
+</ul>
+
+<hr>
+<h2> Miscellaneous Projects </h2>
+<ul>
+  <li class="paper">
+    <span class="title">
+      Optimization on the surface of the (Hyper)-Sphere 
+      <a href="https://arxiv.org/abs/1909.06463" style="color: #FF0000">[Tech Report]</a> <br>
+    </span>
+    <span class="me">Parameswaran Raman</span>, Jiasen Yang <br>
+    <!--b>Course Project, CS 520: Computational Methods in Optimization (Purdue
+      University)</b--> 
+  </li>
+  
+  <li class="paper">
+    <span class="title">
+      Relevancy Prediction of Micro-blog Questions in an Educational Setting
+      <a href="static/pub/Poster_EDM_2014.pdf" style="color: #FF0000">[Short
+        Paper]</a>
+      <br>
+    </span>
+    Mariheida C&oacute;rdova S&aacute;nchez, <span class="me">Parameswaran Raman</span>, Luo Si, Jason Fish <br>
+    <b>Proceedings of the 7th International Conference on Educational Data
+      Mining (EDM), 2014 </b><br>
+    <!-- 25 out of 215 (11.6%) -->
+  </li>
+
+  <li class="paper">
+    <span class="title">
+      Target Score Prediction in the game of Cricket 
+      <a href="static/pub/ML_Project_CS7641.pdf" style="color: #FF0000">[slides]</a>
+      <a href="static/pub/ML_Project_CS7641_report.pdf" style="color:
+    #FF0000">[Tech Report]</a> <br>
+    </span>
+    Sethuraman K, <span class="me">Parameswaran Raman</span>, Vijay Ramakrishnan <br>
+    <b>Course Project, CS 7641: Machine Learning (Georgia Institute of
+      Technology)</b> <br>
+  </li>
+  
+  <li class="paper">
+    <span class="title">
+      PiX-C, Pictures: Express & Communicate (Augmenting Communication with Visual Input for Children in the Autism Spectrum) 
+      <a href="static/pub/NLP_TermProject.pdf" style="color: #FF0000">[slides]</a>
+      <a href="static/pub/PiX-C_Poster.pdf" style="color: #FF0000">[poster]</a> <br>
+    </span>
+    Narayanan Ramakrishnan, <span class="me">Parameswaran Raman</span>, Manohar Ganesan, Gourab Kar, Dr Gregory D. Abowd (Georgia Institute of Technology) <br>
+    <b>Course Project, CS 7650: Natural Language (with Ramakrishnan CH, Suman
+      Manjunath). Extended work was presented as a Poster at 23rd ACM Symposium on User Interface
+      Software and Technology (UIST), 2010</b> <br>
+    <!--a href="http://www.naduism.com/projects/#adaptivekb">[video]</a-->
+  </li>
+</ul>
+
+<hr>
+<h2> Other Papers </h2>
+<p>During my Masters, I worked as a research assistant with Prof. <a
+    href="http://sonify.psych.gatech.edu/~walkerb/">Bruce Walker</a> in the
+Sonification Lab, Georgia Tech on Auditory Interfaces/Human Computer
+Interaction. 
+<ul>
+  <li class="paper">
+    <span class="title">
+        Participatory Design Process for an In-Vehicle Affect Detection and Regulation System for Various Drivers 
+        <br>
+    </span>
+    Myounghoon "Philart" Jeon, <span class="me">Parameswaran Raman</span>,
+    Jung-Bin Yim, J B, Bruce N. Walker <br>
+    <b>Proceedings of the 13th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS), 2011</b><br>
+  </li>
+  
+  <li class="paper">
+    <span class="title">
+        ENGIN (Exploring Next Generation IN-vehicle INterfaces): Drawing a New Conceptual Framework through Iterative Participatory Processes
+        <a href="static/pub/ENGIN_AutomotiveUI2011_Philart.pdf" style="color: #FF0000">[pdf]</a><br>
+    </span>
+    Myounghoon "Philart" Jeon, Jonathan Schuett, Jung-Bin Yim, <span class="me">Parameswaran Raman</span>, Bruce N. Walker <br>
+    <b>Proceedings of the 3rd International Conference on Automotive User
+      Interfaces and Interactive Vehicular Applications (AutomotiveUI), 2011</b><br>
+  </li>
+  
+  <li class="paper">
+    <span class="title"> Advanced Auditory Menus for Universal Access to Electronic Devices <br>
+    </span>
+    Myounghoon "Philart" Jeon, Benjamin Davison, Jeff Wilson, <span class="me">Parameswaran Raman</span>, Bruce N. Walker <br>
+    <b>Proceedings of International Technology & Persons with Disabilities
+      Conference (CSUN), 2010</b><br>
+  </li>
+  
+  <li class="paper">
+    <span class="title">
+      Reducing repetitive development tasks in auditory menu displays with the auditory menu library
+      <a href="static/pub/AML_ICAD_2010.pdf" style="color: #FF0000">[pdf]</a><br>
+    </span>
+    <span class="me">Parameswaran Raman</span>, Benjamin Davison, Myounghoon "Philart" Jeon, Bruce N. Walker <br>
+    <b>Proceedings of the 16th International Conference on Auditory Display (ICAD), 2010 </b><br>
+  </li>
+</ul>  
+
+<p>During my undergrad, I worked on caching replacement algorithms for
+location-dependent data.</p>
+<ul>
+  <li class="paper">
+    <span class="title">
+        PINE-guided cache replacement policy for location-dependent data in mobile environment
+        <a href="static/pub/PINE.pdf" style="color: #FF0000">[pdf]</a> <br>
+    </span>
+    Mary Magdalene Jane, <span class="me">Parameswaran Raman</span>, Nadarajan R, Maytham Safar <br>
+    <b>Proceedings of the First international conference on Pervasive
+      Technologies Related to Assistive Environments (PETRA), 2008</b><br>
+  </li>
+
+  <li class="paper">
+    <span class="title">
+      Weighted Angular Distance Based Cache Replacement Strategy for Location-Dependent Data in Wireless Environment 
+      <a href="static/pub/WIDAAP_cameraready_Jordan.pdf" style="color:
+      #FF0000">[pdf]</a> <br>
+    </span>
+    <span class="me">Parameswaran Raman</span>, Raghavendra Prasad, Nadarajan R, Mary Magdalene Jane <br>
+    <b>Proceedings of the DCCA Conference, Jordan, 2007</b><br>
+  </li>
+
+</ul>
+
