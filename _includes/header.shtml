@@ -66,6 +66,78 @@
               $("#abstract3").hide();
           }
       })
+      $("#absbutton4").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract4").show();
+          }else{
+              $("#abstract4").hide();
+          }
+      })
+      $("#absbutton5").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract5").show();
+          }else{
+              $("#abstract5").hide();
+          }
+      })
+      $("#absbutton6").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract6").show();
+          }else{
+              $("#abstract6").hide();
+          }
+      })
+      $("#absbutton7").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract7").show();
+          }else{
+              $("#abstract7").hide();
+          }
+      })
+      $("#absbutton8").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract8").show();
+          }else{
+              $("#abstract8").hide();
+          }
+      })
+      $("#absbutton9").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract9").show();
+          }else{
+              $("#abstract9").hide();
+          }
+      })
+      $("#absbutton10").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract10").show();
+          }else{
+              $("#abstract10").hide();
+          }
+      })
+      $("#absbutton11").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract11").show();
+          }else{
+              $("#abstract11").hide();
+          }
+      })
+      $("#absbutton12").click(function(){
+          count++;
+          if(count % 2 != 0){
+            $("#abstract12").show();
+          }else{
+              $("#abstract12").hide();
+          }
+      })
   })
     </script>
 
@@ -115,7 +187,7 @@
               <a href="index.html">Home</a>
             </li>
             <li {% if page.section == 'publications'%} class="active" {% endif %} >
-              <a href="research.html">Publications</a>
+              <a href="research.html">Research</a>
             </li>
             <!--li {% if page.section == 'courses'%} class="active" {% endif %} >
               <a href="courses.html">Courses</a>
@@ -123,9 +195,9 @@
             <li {% if page.section == 'blog'%} class="active" {% endif %} >
               <a href="blog.html">Blog</a>
             </li>
-            <li {% if page.section == 'links'%} class="active" {% endif %} >
+            <!--li {% if page.section == 'links'%} class="active" {% endif %} >
               <a href="links.html">Random</a>
-            </li>
+            </li-->
           </ul>
         </div>
       </div>
